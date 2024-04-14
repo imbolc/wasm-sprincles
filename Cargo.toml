@@ -1,5 +1,5 @@
 [workspace]
-members = ["basic", "basic-bindgen"]
+members = ["basic", "basic-bindgen", "greet"]
 resolver = "2"
 
 [profile.release]

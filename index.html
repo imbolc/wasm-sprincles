@@ -19,3 +19,11 @@ init().then(() => {
     console.log(`basic_bindgen.add_one(${n}) =`, exports.add_one(41));
 });
 </script>
+
+<script type="module">
+import init, * as exports from './pkg/greet.js';
+init().then(() => {
+    let name = "WASM";
+    console.log(`greet("${name}") =`, exports.greet(name));
+});
+</script>
