@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<h1>HTML WASM Sprinkles</h1>
+<p>Look into the console</p>
+
+<script>
+fetch(`/target/wasm32-unknown-unknown/release/basic.wasm`)
+    .then(WebAssembly.instantiateStreaming)
+    .then(result => {
+        let { exports } = result.instance;
+        let n = 41;
+        console.log(`basic.add_one(${n}) =`, exports.add_one(41));
+    });
+</script>
+
+<script type="module">
+import init, * as exports from './pkg/basic_bindgen.js';
+init().then(() => {
+    let n = 41;
+    console.log(`basic_bindgen.add_one(${n}) =`, exports.add_one(41));
+});
+</script>
