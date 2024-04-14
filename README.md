@@ -17,13 +17,13 @@ use it on both sides to ensure the calculations are always in sync.
 - `basic` - the simplest example without any dependencies
 - `basic-bindgen` - the previous example using `wasm_bindgen`
 - `greet` - working with strings which aren't native to WASM
+- `events` - interactive greeting using `web_sys`
 
-## File sizes
+## Bundle sizes
 
 | example       | WASM  | JS glue |
 |---------------|-------|---------|
 | basic         | 112 B | -       |
 | basic-bindgen | 142 B | 2.5 K   |
 | greet         | 9.7 K | 5.5 K   |
-
-
+| events        | 19 K  | 14 K    |

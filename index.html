@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <h1>HTML WASM Sprinkles</h1>
-<p>Look into the console</p>
+
+<h2>Events</h2>
+
+<input data-events-input type="text" value="" placeholder="Name">
+<span data-events-output></span>
+
+<p>Look into the console for the output of the remaining examples.</p>
+
+
 
 <script>
 fetch(`/target/wasm32-unknown-unknown/release/basic.wasm`)
@@ -25,5 +33,12 @@ import init, * as exports from './pkg/greet.js';
 init().then(() => {
     let name = "WASM";
     console.log(`greet("${name}") =`, exports.greet(name));
+});
+</script>
+
+<script type="module">
+import init, * as exports from './pkg/events.js';
+init().then(() => {
+    exports.set_event_listener();
 });
 </script>
